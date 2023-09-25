@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
+    //clase persona con nombre usuario
     public class Usuario
     {
         public int IdUsuario { get; set; }
@@ -15,6 +16,5 @@ namespace CapaEntidad
         public string Clave { get; set; }
         public bool Reestablecer { get; set; }
         public bool Activo { get; set; }
-
     }
 }
