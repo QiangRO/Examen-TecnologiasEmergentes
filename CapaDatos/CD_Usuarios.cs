@@ -153,6 +153,58 @@ namespace CapaDatos
             }
             return resultado;
         }
+        /*
+        public bool Eliminar(int id, out string Mensaje)
+{
+    bool resultado = false;
+    Mensaje = string.Empty;
+    
+    try
+    {
+        using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
+        {
+            oconexion.Open();
+            
+            // Comienza una transacción
+            SqlTransaction transaction = oconexion.BeginTransaction();
+            
+            try
+            {
+                SqlCommand cmd = new SqlCommand("DELETE FROM usuario WHERE IdUsuario = @id", oconexion, transaction);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.CommandType = CommandType.Text;
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                // Confirma la transacción si se elimina con éxito un registro
+                if (rowsAffected > 0)
+                {
+                    transaction.Commit();
+                    resultado = true;
+                }
+                else
+                {
+                    transaction.Rollback();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Revierte la transacción en caso de error
+                transaction.Rollback();
+                throw ex; // Lanza la excepción para propagarla hacia arriba
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        resultado = false;
+        Mensaje = ex.Message;
+    }
+    
+    return resultado;
+}
+
+        */
 
         public bool CambiarClave(int idusuario,string nuevaclave, out string Mensaje)
         {
